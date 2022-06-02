@@ -35,8 +35,8 @@ class HomeRepository
             ? $this->model->where('folio', 'like', '%' . $search . '%')
             : $this->model->where('id', '>', 0);
 
-        (Auth::user()->restaurant_id > 0)
-            ? $rg->where('restaurant_id', Auth::user()->restaurant_id)
+        (Auth::user()->type_user_id != 1)
+            ? $rg->where('user_id', Auth::user()->id)
             : $rg;
         $rg->where('status', true);
         switch ($status) {

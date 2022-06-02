@@ -24,10 +24,11 @@ return new class extends Migration
             $table->string('nickname')->unique();
             $table->string('RFC')->unique();
             $table->string('birthdate');
-            $table->unsignedBigInteger('type_user_id')->nullable();
+            $table->unsignedBigInteger('type_user_id')->default(2);
             $table->unsignedBigInteger('restaurant_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
              //foreing key
              $table->foreign('type_user_id')->references('id')->on('type_users')->onDelete('cascade');
              $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');

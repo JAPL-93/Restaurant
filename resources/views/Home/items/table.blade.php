@@ -8,8 +8,11 @@
                 Table:{{ $item->ubication_table->table_number }}</span></h6>
         <h6>Folio: <span class="font-bold">{{$item->folio}}</span></h6>
         <h6>In: <span class="font-bold">{{$item->hour->in}}</span></h6>
+        <h6>Date: <span class="font-bold">{{$item->day}}</span></h6>
         <div class="flex flex-row-reverse">
+            @if (Auth::user()->type_user_id == 1)
             <button class="btn btn-primary" data-modal-toggle="FormModal" onclick="home.showRev({{$item->id}})">Edit</button>
+            @endif
             <button class="btn btn-danger mr-1" onclick="home.delete({{$item->id}})">Delete</button>
         </div>
     </div>

@@ -157,7 +157,7 @@ const home = {
           var my_url = url + '/' + editId.value;
           var type = "PUT";
         }
-        actions.save(type, my_url, state, form);
+        actions2.save(type, my_url, state, form);
         button.dispatchEvent(clickEvent)
         //document.location.reload(true)
       },
@@ -224,7 +224,7 @@ const home = {
         }).then((result) => {
           if (result.value) {
             var my_url = url + '/' + id;
-            actions.delete(my_url);
+            actions2.delete(my_url);
           }
         })
 

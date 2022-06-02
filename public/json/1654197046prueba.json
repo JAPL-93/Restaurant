@@ -1,0 +1,33 @@
+{
+   "user1": {
+    "name": "Example",
+    "last_name": "Examples",
+    "phone": "9992971153",
+    "email": "es@esws.com",
+    "nickname": "dxwsssr",
+    "RFC": "erfsfwss",
+    "birthdate": "10/11/1993",
+    "password": "12345678"
+    },
+    "user2": {
+        "name": "Exampldde",
+        "last_name": "Exddamples",
+        "phone": "9992971153",
+        "email": "es@esddws.com",
+        "nickname": "dxddwsssr",
+        "RFC": "erfsfwddss",
+        "birthdate": "10/11/1993",
+        "password": "12345678"
+        },
+        "user3": {
+            "name": "Exassmple",
+            "last_name": "Edxamples",
+            "phone": "9992971153",
+            "email": "es@escxsws.com",
+            "nickname": "dxwxvfssssr",
+            "RFC": "erfsqweefwss",
+            "birthdate": "10/11/1993",
+            "password": "12345678"
+            }
+
+}

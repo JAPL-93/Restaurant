@@ -1,3 +1,5 @@
 <div class="flex flex-row-reverse">
-    <button id="create" class="bg-green-600 font-light text-white rounded-full mb-2 p-3 hover:bg-green-500" type="button" data-modal-toggle="FormModal" onclick="home.create()">Create Reservation</button>
+    @if (Auth::user()->type_user_id == 1)
+    <button id="create" class="btn btn-success ml-1 btn-create mb-1" type="button" data-modal-toggle="FormModal" onclick="home.create()">Create Reservation</button>
+    @endif
 </div>

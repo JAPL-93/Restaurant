@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +27,8 @@ class User extends Authenticatable
         'phone',
         'birthdate',
         'nickname',
-        'restaurant_id'
+        'restaurant_id',
+        'type_user_id'
     ];
 
     /**
@@ -49,10 +51,10 @@ class User extends Authenticatable
     ];
     public function type_users()
     {
-        return $this->belongsTo('App\Type_user','type_user_id','id');
+        return $this->belongsTo('App\Models\Type_user','type_user_id','id');
     }
     public function restaurant()
     {
-        return $this->belongsTo('App\Restaurant','restaurant_id','id');
+        return $this->belongsTo('App\Models\Restaurant','restaurant_id','id');
     }
 }

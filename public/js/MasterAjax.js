@@ -108,37 +108,11 @@ const actions = {
           url: my_url,
           data: form,
           dataType: 'json',
-          success: function (element) {
-              data = element.data
+          success: function (data) {
             console.log('Error:', data);
             $('.btn-save').prop("disabled", false);
-            //messages(data);
-            if(element.st == '0'){
-                Swal.fire({
-                    title: "Error",
-                    text: "No es hora lavoral",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ok'
-                  }).then((result) => {
-                    document.location.reload(true)
-                  })
-            }
-            if(element.st == '1'){
-                Swal.fire({
-                    title: "Folio",
-                    text: `Este es el folio ${data.folio}`,
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ok'
-                  }).then((result) => {
-                    document.location.reload(true)
-                  })
-            }
+            messages(data);
+
             if (no) {
               n = no;
             } else {
@@ -247,7 +221,6 @@ const actions = {
       success: function (data) {
         messages(data);
         getData(1, datasearch(data), data);
-        document.location.reload(true)
       },
       error: function (data) {
         console.log('Error:', data);
