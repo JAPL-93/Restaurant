@@ -23,8 +23,8 @@ return new class extends Migration
             $table->softDeletes();
 
             //foreing key
-            $table->foreign('type_user_id')->references('id')->on('type_users');
-            $table->foreign('data_menu_id')->references('id')->on('data_menus');
+            $table->foreign('type_user_id')->references('id')->on('type_users')->onDelete('cascade');
+            $table->foreign('data_menu_id')->references('id')->on('data_menus')->onDelete('cascade');
         });
     }
 
